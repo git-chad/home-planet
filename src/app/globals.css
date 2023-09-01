@@ -41,3 +41,14 @@ body {
   height: 11000px;
 }
 
+::-webkit-scrollbar {
+  width: 8px;
+  background-color: linear-gradient();
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #291f69;
+  border-radius: 5px;
+}
+
+

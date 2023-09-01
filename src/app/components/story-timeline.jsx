@@ -4,7 +4,6 @@ import AlienHouse from "./alien-house";
 import GreenGuy from "./intro-green-guy";
 import { gsap } from "gsap";
 import Lenis from "@studio-freight/lenis";
-import { info } from "autoprefixer";
 
 const StoryTimeline = () => {
   useEffect(() => {
@@ -28,7 +27,7 @@ const StoryTimeline = () => {
 
     requestAnimationFrame(raf);
 
-    gsap.set(alienHouse, { opacity: 0 });
+    gsap.set(alienHouse, { opacity: 0, zIndex: 0 });
     gsap.set(scenery, { opacity: 0 });
     gsap.set(images, {
       x: (index) => {
@@ -46,7 +45,7 @@ const StoryTimeline = () => {
       .to(images, { x: "0vh", duration: 10, ease: "linear" }, "startScene")
       .addLabel("endScene")
       .to(scenery, { opacity: 0 }, "endScene")
-      .to(alienHouse, { opacity: 1, delay: 1 }, "endScene");
+      .to(alienHouse, { opacity: 1, zIndex: 2, delay: 1 }, "endScene");
 
     timeline.pause();
 
@@ -65,13 +64,13 @@ const StoryTimeline = () => {
   }, []);
 
   return (
-    <div className="fade-in">
-      <section className="alien-house w-screen h-screen top-0 left-0 flex flex-col justify-center items-center">
-        <AlienHouse />
+    <div className="fade-in relative">
+      <section className="fixed alien-house w-screen h-screen top-0 left-0 flex flex-col justify-center items-center">
+        <div><AlienHouse /></div>
       </section>
 
       <section className="scenery">
-        <div className="scene-layers fixed top-0 left-0 w-screen h-screen pointer-events-none">
+        <div className="scene-layers fixed top-0 left-0 w-screen h-screen">
           <img src="/mountains-back.svg"></img>
           <img src="/mountains-front.svg"></img>
           <img src="/main-scene.svg"></img>
@@ -82,8 +81,8 @@ const StoryTimeline = () => {
         </div>
       </section>
 
-      <section className="green-guy w-screen h-screen fixed top-0 left-0 flex flex-col justify-center items-center text-white pointer-events-none">
-        <div className="">
+      <section className="-z-10 green-guy w-screen h-screen fixed top-0 left-0 flex flex-col justify-center items-center text-white">
+        <div>
           <GreenGuy />
         </div>
 
