@@ -1,0 +1,21 @@
+Demo:
+https://home-planet.superhi.com
+
+Figma link:
+https://www.figma.com/file/2sMzu3y1TVGUmF7sB2EQhl/Home-Planet
+
+Colors: 
+Background: #140e3c
+White: #ffffff
+
+Typography:
+IBM Plex Mono at 600 weight
+https://fonts.google.com/specimen/IBM+Plex+Mono
+
+Code: 
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@600&display=swap');
+
+Content:
+Welcome to my home planet.
+Keep scrolling, stranger!
+

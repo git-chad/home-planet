@@ -1,7 +1,7 @@
 import './globals.css'
-import { Inter } from 'next/font/google'
+import { IBM_Plex_Mono } from 'next/font/google'
 
-const inter = Inter({ subsets: ['latin'] })
+const ibmPlex = IBM_Plex_Mono({ subsets: ['latin'], weight: ['400', '500', '600', '700']})
 
 export const metadata = {
   title: 'Create Next App',
@@ -11,7 +11,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${ibmPlex.className} bg-[#140e3c]` }>{children}</body>
     </html>
   )
 }

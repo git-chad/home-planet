@@ -2,26 +2,42 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+div.fade-in {
+  animation: fadein 1s 1s both;
 }
+
+section.alien-house svg g#scene {
+  opacity: 1;
+  transition: opacity 0.25s;
+}
+
+section.alien-house svg:hover g#scene {
+  opacity: 0.3;
+}
+
+div.label.is-visible {
+  opacity: 1;
+}
+
+div.scene-layers img {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 700vh;
+  max-width: none;
+}
+
+body {
+  height: 11000px;
+}
+
